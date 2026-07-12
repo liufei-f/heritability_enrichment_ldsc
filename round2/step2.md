@@ -1,0 +1,1 @@
+/data/projects/11003054/e1101943/project/01.adipose_sqtl/data/33.CELLEX/ cellex_Annotation_level2.$depot_filtered*
