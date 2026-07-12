@@ -23,9 +23,9 @@ BASE_OUTPUT_DIR: /home/users/nus/e1124850/scratch/TOngCELLECTGWAS_Her
 # the files can be uncompressed or compressed (gz/bz2 formats are supported).
 SPECIFICITY_INPUT:
   - id: Adipose_SAT
-    path: /data/projects/11003054/e1101943/project/01.adipose_sqtl/data/33.CELLEX/cellex_Annotation_level2.SAT_filtered.ensembl.esmu.csv.gz # this test file contains 2 annotations
+    path: /home/users/nus/e1124850/scratch/cellex_Annotation_level2.SAT_filtered.ensembl.esmu.cellect.csv.gz # this test file contains 2 annotations
   # - id: Adipose_VAT
-  #   path: /data/projects/11003054/e1101943/project/01.adipose_sqtl/data/33.CELLEX/cellex_Annotation_level2.VAT_filtered.ensembl.esmu.csv.gz # this test file contains 5 annotations
+  #   path: /home/users/nus/e1124850/scratch/cellex_Annotation_level2.VAT_filtered.ensembl.esmu.cellect.csv.gz # this test file contains 5 annotations
 
 
 ### GWAS_SUMSTATS: list of dictionaries
@@ -62,9 +62,9 @@ KEEP_ANNOTS: # [CELLECT-LDSC ONLY] If True, for each specificity input a file co
 # NOTE: you can delete or leave these dicts blank if the 'analysis type' is not activated
 HERITABILITY_INPUT:
   - id: Adipose_SAT
-    annotations: ['Adipocyte','AEC','Areg','CD4+_T','CD56dim_CD16+_NK','CD8+_T','cDC2','CEC','Classical_monocyte','Committed_preadipocyte','Early_preadipocyte','LAM','Pericyte','PVM','SMC','Treg','VEC']
+    annotations: ['Adipocyte','AEC','Areg','CD4pos_T','CD56dim_CD16pos_NK','CD8pos_T','cDC2','CEC','Classical_monocyte','Committed_preadipocyte','Early_preadipocyte','LAM','Pericyte','PVM','SMC','Treg','VEC']
   # - id: Adipose_VAT
-  #   annotations: ['Adipocyte','AEC','Areg','B','CD4+_T','CD56dim_CD16+_NK','CD8+_T','cDC2','CEC','Classical_monocyte','Committed_preadipocyte','Early_preadipocyte','IGFBP2+_cell','LAM','LEC','Mesothelial','Pericyte','PVM','SMC','TIM4+_ATM','TIM4+_CD11c+_ATM','VEC']
+  #   annotations: ['Adipocyte','AEC','Areg','B','CD4pos_T','CD56dim_CD16pos_NK','CD8pos_T','cDC2','CEC','Classical_monocyte','Committed_preadipocyte','Early_preadipocyte','IGFBP2pos_cell','LAM','LEC','Mesothelial','Pericyte','PVM','SMC','TIM4pos_ATM','TIM4pos_CD11cpos_ATM','VEC']
         
 
 #############################################################################################################################
