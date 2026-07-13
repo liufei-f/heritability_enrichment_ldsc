@@ -76,10 +76,27 @@ for file in files:
 ```
 
 
-<!-- 
+```bash
 conda create \
   -n snakemake \
   -c conda-forge \
   -c bioconda \
   snakemake=5.27.4 \
-  -y -->
+  -y
+
+```
+
+
+
+
+
+```bash
+cd
+conda activate snakemake
+PYTHONNOUSERSITE=1 snakemake \
+  --use-conda \
+  --conda-frontend conda \
+  -j 1 \
+  -s CELLECT/cellect-ldsc.snakefile \
+  --configfile heritability_enrichment_ldsc/round2/config.yml
+```

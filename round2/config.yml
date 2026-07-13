@@ -24,17 +24,59 @@ BASE_OUTPUT_DIR: /home/users/nus/e1124850/scratch/TOngCELLECTGWAS_Her
 SPECIFICITY_INPUT:
   - id: Adipose_SAT
     path: /home/users/nus/e1124850/scratch/cellex_Annotation_level2.SAT_filtered.ensembl.esmu.cellect.csv.gz # this test file contains 2 annotations
-  # - id: Adipose_VAT
-  #   path: /home/users/nus/e1124850/scratch/cellex_Annotation_level2.VAT_filtered.ensembl.esmu.cellect.csv.gz # this test file contains 5 annotations
+  - id: Adipose_VAT
+    path: /home/users/nus/e1124850/scratch/cellex_Annotation_level2.VAT_filtered.ensembl.esmu.cellect.csv.gz # this test file contains 5 annotations
 
 
 ### GWAS_SUMSTATS: list of dictionaries
 # id: identifier for GWAS. MUST be unique and NO double underscores allowed
 # path: filepath for munged GWAS sumstats. Uncompressed / gz or bz2 compressed files allowed.
 GWAS_SUMSTATS:
+  - id: 2hGlu
+    path: /home/users/nus/e1124850/scratch/CELLECT_2hGlu_ldsc.sumstats.gz
+  - id: Acute_Pancreatitis
+    path: /home/users/nus/e1124850/scratch/CELLECT_Acute_Pancreatitis_ldsc.sumstats.gz
   - id: Adiponectin
     path: /home/users/nus/e1124850/scratch/CELLECT_Adiponectin_ldsc.sumstats.gz
-    
+  - id: BMI
+    path: /home/users/nus/e1124850/scratch/CELLECT_BMI_ldsc.sumstats.gz
+  - id: Body_Weight
+    path: /home/users/nus/e1124850/scratch/CELLECT_Body_Weight_ldsc.sumstats.gz
+  - id: Chronic_Pancreatitis
+    path: /home/users/nus/e1124850/scratch/CELLECT_Chronic_Pancreatitis_ldsc.sumstats.gz
+  - id: Coronary_Artery_Disease
+    path: /home/users/nus/e1124850/scratch/CELLECT_Coronary_Artery_Disease_ldsc.sumstats.gz
+  - id: Diabetic_Nephropathy
+    path: /home/users/nus/e1124850/scratch/CELLECT_Diabetic_Nephropathy_ldsc.sumstats.gz
+  - id: Fasting_Glucose
+    path: /home/users/nus/e1124850/scratch/CELLECT_Fasting_Glucose_ldsc.sumstats.gz
+  - id: Fasting_Insulin
+    path: /home/users/nus/e1124850/scratch/CELLECT_Fasting_Insulin_ldsc.sumstats.gz
+  - id: Glucocorticoids
+    path: /home/users/nus/e1124850/scratch/CELLECT_Glucocorticoids_ldsc.sumstats.gz
+  - id: Glucose
+    path: /home/users/nus/e1124850/scratch/CELLECT_Glucose_ldsc.sumstats.gz
+  - id: HbA1c
+    path: /home/users/nus/e1124850/scratch/CELLECT_HbA1c_ldsc.sumstats.gz
+  - id: HDL
+    path: /home/users/nus/e1124850/scratch/CELLECT_HDL_ldsc.sumstats.gz
+  - id: Height
+    path: /home/users/nus/e1124850/scratch/CELLECT_Height_ldsc.sumstats.gz
+  - id: LDL
+    path: /home/users/nus/e1124850/scratch/CELLECT_LDL_ldsc.sumstats.gz
+  - id: Pancreatic_Cancer
+    path: /home/users/nus/e1124850/scratch/CELLECT_Pancreatic_Cancer_ldsc.sumstats.gz
+  - id: Total_Cholesterol
+    path: /home/users/nus/e1124850/scratch/CELLECT_Total_Cholesterol_ldsc.sumstats.gz
+  - id: Triglycerides
+    path: /home/users/nus/e1124850/scratch/CELLECT_Triglycerides_ldsc.sumstats.gz
+  - id: T2DSakaue
+    path: /home/users/nus/e1124850/scratch/CELLECT_T2DSakaue_ldsc.sumstats.gz
+  - id: T2DSpracklen
+    path: /home/users/nus/e1124850/scratch/CELLECT_T2DSpracklen_ldsc.sumstats.gz
+  - id: Waist_Circumference
+    path: /home/users/nus/e1124850/scratch/CELLECT_Waist_Circumference_ldsc.sumstats.gz
+
 ANALYSIS_TYPE: # specify what analysis type to run. At least one analysis type needs to be specified.
   prioritization: False # prioritizes all cell-type annotations in the SPECIFICITY_INPUT datasets
   conditional: False # performs conditional analysis for selected annotations.
@@ -63,8 +105,8 @@ KEEP_ANNOTS: # [CELLECT-LDSC ONLY] If True, for each specificity input a file co
 HERITABILITY_INPUT:
   - id: Adipose_SAT
     annotations: ['Adipocyte','AEC','Areg','CD4pos_T','CD56dim_CD16pos_NK','CD8pos_T','cDC2','CEC','Classical_monocyte','Committed_preadipocyte','Early_preadipocyte','LAM','Pericyte','PVM','SMC','Treg','VEC']
-  # - id: Adipose_VAT
-  #   annotations: ['Adipocyte','AEC','Areg','B','CD4pos_T','CD56dim_CD16pos_NK','CD8pos_T','cDC2','CEC','Classical_monocyte','Committed_preadipocyte','Early_preadipocyte','IGFBP2pos_cell','LAM','LEC','Mesothelial','Pericyte','PVM','SMC','TIM4pos_ATM','TIM4pos_CD11cpos_ATM','VEC']
+  - id: Adipose_VAT
+    annotations: ['Adipocyte','AEC','Areg','B','CD4pos_T','CD56dim_CD16pos_NK','CD8pos_T','cDC2','CEC','Classical_monocyte','Committed_preadipocyte','Early_preadipocyte','IGFBP2pos_cell','LAM','LEC','Mesothelial','Pericyte','PVM','SMC','TIM4pos_ATM','TIM4pos_CD11cpos_ATM','VEC']
         
 
 #############################################################################################################################
