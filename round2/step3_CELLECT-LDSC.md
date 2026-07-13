@@ -74,3 +74,12 @@ for file in files:
     print(output)
 
 ```
+
+
+<!-- 
+conda create \
+  -n snakemake \
+  -c conda-forge \
+  -c bioconda \
+  snakemake=5.27.4 \
+  -y -->
