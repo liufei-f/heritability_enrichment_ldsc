@@ -91,12 +91,52 @@ conda create \
 
 
 ```bash
-cd
+
+#PBS -q normal
+#PBS -l select=1:ncpus=2:mem=200G
+#PBS -l walltime=120:00:00
+#PBS -P 11003054
+#PBS -N h2_sat
+#PBS -o /home/users/nus/e1124850/scratch/qsub_dir/h2_sat.o
+#PBS -e /home/users/nus/e1124850/scratch/qsub_dir/h2_sat.e
+
+source /home/users/nus/e1124850/anaconda3/etc/profile.d/conda.sh
 conda activate snakemake
+
+cd
 PYTHONNOUSERSITE=1 snakemake \
   --use-conda \
   --conda-frontend conda \
   -j 1 \
-  -s CELLECT/cellect-ldsc.snakefile \
-  --configfile heritability_enrichment_ldsc/round2/config.yml
+  -s /home/users/nus/e1124850/CELLECT/cellect-ldsc.snakefile \
+  --configfile /home/users/nus/e1124850/heritability_enrichment_ldsc/round2/config_SAT.yml
+
+
+```
+
+
+
+
+```bash
+
+#PBS -q normal
+#PBS -l select=1:ncpus=2:mem=200G
+#PBS -l walltime=120:00:00
+#PBS -P 11003054
+#PBS -N h2_sat
+#PBS -o /home/users/nus/e1124850/scratch/qsub_dir/h2_sat.o
+#PBS -e /home/users/nus/e1124850/scratch/qsub_dir/h2_sat.e
+
+source /home/users/nus/e1124850/anaconda3/etc/profile.d/conda.sh
+conda activate snakemake
+
+cd
+PYTHONNOUSERSITE=1 snakemake \
+  --use-conda \
+  --conda-frontend conda \
+  -j 1 \
+  -s /home/users/nus/e1124850/CELLECT/cellect-ldsc.snakefile \
+  --configfile /home/users/nus/e1124850/heritability_enrichment_ldsc/round2/config_VAT.yml
+
+
 ```
