@@ -21,7 +21,7 @@ PYTHONNOUSERSITE=1 snakemake \
 '''
 
 
-for celltype in ['Adipocyte','AEC','Areg','CD4pos_T','CD56dim_CD16pos_NK','CD8pos_T','cDC2','CEC','Classical_monocyte','Committed_preadipocyte','Early_preadipocyte','LAM','Pericyte','PVM','SMC','Treg','VEC']:
+for celltype in ['Adipocyte','AEC','Areg','B','CD4pos_T','CD56dim_CD16pos_NK','CD8pos_T','cDC2','CEC','Classical_monocyte','Committed_preadipocyte','Early_preadipocyte','IGFBP2pos_cell','LAM','LEC','Mesothelial','Pericyte','PVM','SMC','TIM4pos_ATM','TIM4pos_CD11cpos_ATM','VEC']:
     with open(f'/Users/theeeight/github/heritability_enrichment_ldsc/round3/vatpbs/config_vat_{celltype}.pbs','w') as f:
         f.write(pbstemplete.replace('CELLTYPE',celltype))
         f.close()
