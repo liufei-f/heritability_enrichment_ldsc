@@ -17,7 +17,7 @@ PYTHONNOUSERSITE=1 snakemake \
   --conda-frontend conda \
   -j 1 \
   -s /home/users/nus/e1124850/CELLECT/cellect-ldsc.snakefile \
-  --configfile /home/users/nus/e1124850/scratch/github/heritability_enrichment_ldsc/round3/satconfig/config_sat_CELLTYPE.yml
+  --configfile /home/users/nus/e1124850/scratch/github/heritability_enrichment_ldsc/round3/satconfig/config_sat_CELLTYPE.yaml
 '''
 
 

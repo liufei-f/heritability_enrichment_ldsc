@@ -68,7 +68,7 @@ KEEP_ANNOTS:
 
 HERITABILITY_INPUT:
   - id: Adipose_SAT
-    annotations: CD56dim_CD16pos_NK
+    annotations: ['CD56dim_CD16pos_NK']
 
 LDSC_CONST:
   DATA_DIR: 

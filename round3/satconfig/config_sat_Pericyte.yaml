@@ -68,7 +68,7 @@ KEEP_ANNOTS:
 
 HERITABILITY_INPUT:
   - id: Adipose_SAT
-    annotations: Pericyte
+    annotations: ['Pericyte']
 
 LDSC_CONST:
   DATA_DIR: 

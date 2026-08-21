@@ -68,7 +68,7 @@ KEEP_ANNOTS:
 
 HERITABILITY_INPUT:
   - id: Adipose_SAT
-    annotations: Treg
+    annotations: ['Treg']
 
 LDSC_CONST:
   DATA_DIR: 

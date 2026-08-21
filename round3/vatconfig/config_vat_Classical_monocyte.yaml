@@ -68,7 +68,7 @@ KEEP_ANNOTS:
 
 HERITABILITY_INPUT:
   - id: Adipose_VAT
-    annotations: Classical_monocyte
+    annotations: ['Classical_monocyte']
 
 LDSC_CONST:
   DATA_DIR: 

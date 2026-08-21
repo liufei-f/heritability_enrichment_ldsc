@@ -68,7 +68,7 @@ KEEP_ANNOTS:
 
 HERITABILITY_INPUT:
   - id: Adipose_SAT
-    annotations: CD8pos_T
+    annotations: ['CD8pos_T']
 
 LDSC_CONST:
   DATA_DIR: 

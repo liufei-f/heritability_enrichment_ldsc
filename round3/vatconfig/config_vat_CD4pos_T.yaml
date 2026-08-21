@@ -68,7 +68,7 @@ KEEP_ANNOTS:
 
 HERITABILITY_INPUT:
   - id: Adipose_VAT
-    annotations: CD4pos_T
+    annotations: ['CD4pos_T']
 
 LDSC_CONST:
   DATA_DIR: 
