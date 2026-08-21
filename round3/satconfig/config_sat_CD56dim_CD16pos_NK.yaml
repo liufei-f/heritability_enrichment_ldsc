@@ -1,7 +1,7 @@
-BASE_OUTPUT_DIR: /home/users/nus/e1124850/e1124850/co_lab/tongyihan/round3/sat
+BASE_OUTPUT_DIR: /home/users/nus/e1124850/e1124850/co_lab/tongyihan/round3/sat/CD56dim_CD16pos_NK
 
 SPECIFICITY_INPUT:
-  - id: Adipose_SAT
+  - id: SAT_CD56dim_CD16pos_NK
     path: /home/users/nus/e1124850/e1124850/co_lab/tongyihan/round3/SAT_top_10percent_CD56dim_CD16pos_NK.csv.gz 
 
 GWAS_SUMSTATS:
@@ -67,7 +67,7 @@ KEEP_ANNOTS:
 
 
 HERITABILITY_INPUT:
-  - id: Adipose_SAT
+  - id: SAT_CD56dim_CD16pos_NK
     annotations: ['CD56dim_CD16pos_NK']
 
 LDSC_CONST:

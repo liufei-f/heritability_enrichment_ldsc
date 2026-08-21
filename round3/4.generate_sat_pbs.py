@@ -11,7 +11,10 @@ pbstemplete = '''#PBS -q normal
 source /home/users/nus/e1124850/anaconda3/etc/profile.d/conda.sh
 conda activate snakemake
 
-cd
+WORKDIR=/home/users/nus/e1124850/scratch/snakework/sat_CELLTYPE
+mkdir -p $WORKDIR
+ln -sfn /home/users/nus/e1124850/CELLECT/scripts $WORKDIR/scripts
+cd $WORKDIR
 PYTHONNOUSERSITE=1 snakemake \
   --use-conda \
   --conda-frontend conda \

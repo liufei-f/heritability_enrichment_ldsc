@@ -1,7 +1,7 @@
-BASE_OUTPUT_DIR: /home/users/nus/e1124850/e1124850/co_lab/tongyihan/round3/vat
+BASE_OUTPUT_DIR: /home/users/nus/e1124850/e1124850/co_lab/tongyihan/round3/vat/IGFBP2pos_cell
 
 SPECIFICITY_INPUT:
-  - id: Adipose_VAT
+  - id: VAT_IGFBP2pos_cell
     path: /home/users/nus/e1124850/e1124850/co_lab/tongyihan/round3/VAT_top_10percent_IGFBP2pos_cell.csv.gz 
 
 GWAS_SUMSTATS:
@@ -67,7 +67,7 @@ KEEP_ANNOTS:
 
 
 HERITABILITY_INPUT:
-  - id: Adipose_VAT
+  - id: VAT_IGFBP2pos_cell
     annotations: ['IGFBP2pos_cell']
 
 LDSC_CONST:

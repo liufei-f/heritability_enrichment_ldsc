@@ -1,7 +1,7 @@
-BASE_OUTPUT_DIR: /home/users/nus/e1124850/e1124850/co_lab/tongyihan/round3/vat
+BASE_OUTPUT_DIR: /home/users/nus/e1124850/e1124850/co_lab/tongyihan/round3/vat/Adipocyte
 
 SPECIFICITY_INPUT:
-  - id: Adipose_VAT
+  - id: VAT_Adipocyte
     path: /home/users/nus/e1124850/e1124850/co_lab/tongyihan/round3/VAT_top_10percent_Adipocyte.csv.gz 
 
 GWAS_SUMSTATS:
@@ -67,7 +67,7 @@ KEEP_ANNOTS:
 
 
 HERITABILITY_INPUT:
-  - id: Adipose_VAT
+  - id: VAT_Adipocyte
     annotations: ['Adipocyte']
 
 LDSC_CONST:

@@ -9,5 +9,8 @@
 source /home/users/nus/e1124850/anaconda3/etc/profile.d/conda.sh
 conda activate snakemake
 
-cd
+WORKDIR=/home/users/nus/e1124850/scratch/snakework/vat_CEC
+mkdir -p $WORKDIR
+ln -sfn /home/users/nus/e1124850/CELLECT/scripts $WORKDIR/scripts
+cd $WORKDIR
 PYTHONNOUSERSITE=1 snakemake   --use-conda   --conda-frontend conda   -j 1   -s /home/users/nus/e1124850/CELLECT/cellect-ldsc.snakefile   --configfile /home/users/nus/e1124850/scratch/github/heritability_enrichment_ldsc/round3/vatconfig/config_vat_CEC.yaml

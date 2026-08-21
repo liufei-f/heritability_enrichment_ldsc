@@ -1,7 +1,7 @@
-BASE_OUTPUT_DIR: /home/users/nus/e1124850/e1124850/co_lab/tongyihan/round3/sat
+BASE_OUTPUT_DIR: /home/users/nus/e1124850/e1124850/co_lab/tongyihan/round3/sat/Treg
 
 SPECIFICITY_INPUT:
-  - id: Adipose_SAT
+  - id: SAT_Treg
     path: /home/users/nus/e1124850/e1124850/co_lab/tongyihan/round3/SAT_top_10percent_Treg.csv.gz 
 
 GWAS_SUMSTATS:
@@ -67,7 +67,7 @@ KEEP_ANNOTS:
 
 
 HERITABILITY_INPUT:
-  - id: Adipose_SAT
+  - id: SAT_Treg
     annotations: ['Treg']
 
 LDSC_CONST:

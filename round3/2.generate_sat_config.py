@@ -1,7 +1,7 @@
-templete = '''BASE_OUTPUT_DIR: /home/users/nus/e1124850/e1124850/co_lab/tongyihan/round3/sat
+templete = '''BASE_OUTPUT_DIR: /home/users/nus/e1124850/e1124850/co_lab/tongyihan/round3/sat/CELLTYPE
 
 SPECIFICITY_INPUT:
-  - id: Adipose_SAT
+  - id: SAT_CELLTYPE
     path: /home/users/nus/e1124850/e1124850/co_lab/tongyihan/round3/SAT_top_10percent_CELLTYPE.csv.gz 
 
 GWAS_SUMSTATS:
@@ -67,7 +67,7 @@ KEEP_ANNOTS:
 
 
 HERITABILITY_INPUT:
-  - id: Adipose_SAT
+  - id: SAT_CELLTYPE
     annotations: ['CELLTYPE']
 
 LDSC_CONST:

@@ -1,7 +1,7 @@
-BASE_OUTPUT_DIR: /home/users/nus/e1124850/e1124850/co_lab/tongyihan/round3/sat
+BASE_OUTPUT_DIR: /home/users/nus/e1124850/e1124850/co_lab/tongyihan/round3/sat/VEC
 
 SPECIFICITY_INPUT:
-  - id: Adipose_SAT
+  - id: SAT_VEC
     path: /home/users/nus/e1124850/e1124850/co_lab/tongyihan/round3/SAT_top_10percent_VEC.csv.gz 
 
 GWAS_SUMSTATS:
@@ -67,7 +67,7 @@ KEEP_ANNOTS:
 
 
 HERITABILITY_INPUT:
-  - id: Adipose_SAT
+  - id: SAT_VEC
     annotations: ['VEC']
 
 LDSC_CONST:
