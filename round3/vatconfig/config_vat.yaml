@@ -1,8 +1,8 @@
-BASE_OUTPUT_DIR: /home/users/nus/e1124850/e1124850/co_lab/tongyihan/round3/vat/Areg
+BASE_OUTPUT_DIR: /home/users/nus/e1124850/e1124850/co_lab/tongyihan/round3/vat
 
 SPECIFICITY_INPUT:
-  - id: VAT_Areg
-    path: /home/users/nus/e1124850/e1124850/co_lab/tongyihan/round3/VAT_top_10percent_Areg.csv.gz 
+  - id: Adipose_VAT
+    path: /home/users/nus/e1124850/e1124850/co_lab/tongyihan/round3/VAT_top_10percent.csv.gz
 
 GWAS_SUMSTATS:
   - id: 2hGlu
@@ -67,8 +67,8 @@ KEEP_ANNOTS:
 
 
 HERITABILITY_INPUT:
-  - id: VAT_Areg
-    annotations: ['Areg']
+  - id: Adipose_VAT
+    annotations: ['Adipocyte', 'AEC', 'Areg', 'B', 'CD4pos_T', 'CD56dim_CD16pos_NK', 'CD8pos_T', 'cDC2', 'CEC', 'Classical_monocyte', 'Committed_preadipocyte', 'Early_preadipocyte', 'IGFBP2pos_cell', 'LAM', 'LEC', 'Mesothelial', 'Pericyte', 'PVM', 'SMC', 'TIM4pos_ATM', 'TIM4pos_CD11cpos_ATM', 'VEC']
 
 LDSC_CONST:
   DATA_DIR: 

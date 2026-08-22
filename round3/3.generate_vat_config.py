@@ -1,8 +1,8 @@
-templete = '''BASE_OUTPUT_DIR: /home/users/nus/e1124850/e1124850/co_lab/tongyihan/round3/vat/CELLTYPE
+templete = '''BASE_OUTPUT_DIR: /home/users/nus/e1124850/e1124850/co_lab/tongyihan/round3/vat
 
 SPECIFICITY_INPUT:
-  - id: VAT_CELLTYPE
-    path: /home/users/nus/e1124850/e1124850/co_lab/tongyihan/round3/VAT_top_10percent_CELLTYPE.csv.gz 
+  - id: Adipose_VAT
+    path: /home/users/nus/e1124850/e1124850/co_lab/tongyihan/round3/VAT_top_10percent.csv.gz
 
 GWAS_SUMSTATS:
   - id: 2hGlu
@@ -67,8 +67,8 @@ KEEP_ANNOTS:
 
 
 HERITABILITY_INPUT:
-  - id: VAT_CELLTYPE
-    annotations: ['CELLTYPE']
+  - id: Adipose_VAT
+    annotations: [ANNOTATIONS]
 
 LDSC_CONST:
   DATA_DIR: 
@@ -81,7 +81,10 @@ LDSC_CONST:
 '''
 
 
-for celltype in ['Adipocyte','AEC','Areg','B','CD4pos_T','CD56dim_CD16pos_NK','CD8pos_T','cDC2','CEC','Classical_monocyte','Committed_preadipocyte','Early_preadipocyte','IGFBP2pos_cell','LAM','LEC','Mesothelial','Pericyte','PVM','SMC','TIM4pos_ATM','TIM4pos_CD11cpos_ATM','VEC']:
-    with open(f'/Users/theeeight/github/heritability_enrichment_ldsc/round3/vatconfig/config_vat_{celltype}.yaml','w') as f:
-        f.write(templete.replace('CELLTYPE',celltype))
-        f.close()
+
+celltypes = ['Adipocyte', 'AEC', 'Areg', 'B', 'CD4pos_T', 'CD56dim_CD16pos_NK', 'CD8pos_T', 'cDC2', 'CEC', 'Classical_monocyte', 'Committed_preadipocyte', 'Early_preadipocyte', 'IGFBP2pos_cell', 'LAM', 'LEC', 'Mesothelial', 'Pericyte', 'PVM', 'SMC', 'TIM4pos_ATM', 'TIM4pos_CD11cpos_ATM', 'VEC']
+
+annotations = ', '.join("'{}'".format(c) for c in celltypes)
+
+with open('/Users/theeeight/github/heritability_enrichment_ldsc/round3/vatconfig/config_vat.yaml', 'w') as f:
+    f.write(templete.replace('ANNOTATIONS', annotations))

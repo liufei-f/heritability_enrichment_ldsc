@@ -1,8 +1,8 @@
-templete = '''BASE_OUTPUT_DIR: /home/users/nus/e1124850/e1124850/co_lab/tongyihan/round3/sat/CELLTYPE
+templete = '''BASE_OUTPUT_DIR: /home/users/nus/e1124850/e1124850/co_lab/tongyihan/round3/sat
 
 SPECIFICITY_INPUT:
-  - id: SAT_CELLTYPE
-    path: /home/users/nus/e1124850/e1124850/co_lab/tongyihan/round3/SAT_top_10percent_CELLTYPE.csv.gz 
+  - id: Adipose_SAT
+    path: /home/users/nus/e1124850/e1124850/co_lab/tongyihan/round3/SAT_top_10percent.csv.gz
 
 GWAS_SUMSTATS:
   - id: 2hGlu
@@ -67,8 +67,8 @@ KEEP_ANNOTS:
 
 
 HERITABILITY_INPUT:
-  - id: SAT_CELLTYPE
-    annotations: ['CELLTYPE']
+  - id: Adipose_SAT
+    annotations: [ANNOTATIONS]
 
 LDSC_CONST:
   DATA_DIR: 
@@ -81,7 +81,10 @@ LDSC_CONST:
 '''
 
 
-for celltype in ['Adipocyte','AEC','Areg','CD4pos_T','CD56dim_CD16pos_NK','CD8pos_T','cDC2','CEC','Classical_monocyte','Committed_preadipocyte','Early_preadipocyte','LAM','Pericyte','PVM','SMC','Treg','VEC']:
-    with open(f'/Users/theeeight/github/heritability_enrichment_ldsc/round3/satconfig/config_sat_{celltype}.yaml','w') as f:
-        f.write(templete.replace('CELLTYPE',celltype))
-        f.close()
+
+celltypes = ['Adipocyte', 'AEC', 'Areg', 'CD4pos_T', 'CD56dim_CD16pos_NK', 'CD8pos_T', 'cDC2', 'CEC', 'Classical_monocyte', 'Committed_preadipocyte', 'Early_preadipocyte', 'LAM', 'Pericyte', 'PVM', 'SMC', 'Treg', 'VEC']
+
+annotations = ', '.join("'{}'".format(c) for c in celltypes)
+
+with open('/Users/theeeight/github/heritability_enrichment_ldsc/round3/satconfig/config_sat.yaml', 'w') as f:
+    f.write(templete.replace('ANNOTATIONS', annotations))

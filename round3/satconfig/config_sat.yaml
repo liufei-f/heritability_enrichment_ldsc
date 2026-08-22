@@ -1,8 +1,8 @@
-BASE_OUTPUT_DIR: /home/users/nus/e1124850/e1124850/co_lab/tongyihan/round3/sat/LAM
+BASE_OUTPUT_DIR: /home/users/nus/e1124850/e1124850/co_lab/tongyihan/round3/sat
 
 SPECIFICITY_INPUT:
-  - id: SAT_LAM
-    path: /home/users/nus/e1124850/e1124850/co_lab/tongyihan/round3/SAT_top_10percent_LAM.csv.gz 
+  - id: Adipose_SAT
+    path: /home/users/nus/e1124850/e1124850/co_lab/tongyihan/round3/SAT_top_10percent.csv.gz
 
 GWAS_SUMSTATS:
   - id: 2hGlu
@@ -67,8 +67,8 @@ KEEP_ANNOTS:
 
 
 HERITABILITY_INPUT:
-  - id: SAT_LAM
-    annotations: ['LAM']
+  - id: Adipose_SAT
+    annotations: ['Adipocyte', 'AEC', 'Areg', 'CD4pos_T', 'CD56dim_CD16pos_NK', 'CD8pos_T', 'cDC2', 'CEC', 'Classical_monocyte', 'Committed_preadipocyte', 'Early_preadipocyte', 'LAM', 'Pericyte', 'PVM', 'SMC', 'Treg', 'VEC']
 
 LDSC_CONST:
   DATA_DIR: 
