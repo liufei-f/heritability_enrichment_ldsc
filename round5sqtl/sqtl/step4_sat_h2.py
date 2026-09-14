@@ -44,11 +44,7 @@ sat_celltypes = [
 ldsc = "/home/users/nus/e1124850/scratch/github/ldsc/ldsc.py"
 sumstats_dir = "/home/users/nus/e1124850/scratch"
 
-annotation_dir = (
-    "/home/users/nus/e1124850/e1124850/"
-    "co_lab/tianchi/gene_annot_file_grch37"
-)
-
+annotation_dir = "/home/users/nus/e1124850/e1124850/co_lab/tianchi/gene_annot_file_grch37"
 baseline_prefix = "/home/users/nus/e1124850/e1124850/co_lab/tongyihan/1000G_Phase3_EAS_baselineLD_v2.2_ldscores/baselineLD."
 frequency_prefix = "/home/users/nus/e1124850/e1124850/co_lab/tongyihan/round1/1000G_Phase3_EAS_plinkfiles/1000G.EAS.QC."
 weights_prefix = "/home/users/nus/e1124850/e1124850/co_lab/tongyihan/round1/1000G_Phase3_EAS_weights_hm3_no_MHC/weights.EAS.hm3_noMHC."
