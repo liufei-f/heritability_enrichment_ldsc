@@ -79,7 +79,7 @@ for celltype in sat_celltypes:
     sat_sqtl_sig_gene_path = f'/home/users/nus/e1124850/scratch/github/heritability_enrichment_ldsc/round5sqtl/tianchi_sat_{celltype}_gene_set_file.txt'
     for chrid in range(1, 23):
         cmd = (
-            f'python /home/users/nus/e1124850/ldsc/make_annot.py '
+            f'python /home/users/nus/e1124850/scratch/github/ldsc/make_annot.py '
             f'--gene-set-file {sat_sqtl_sig_gene_path} '
             f'--gene-coord-file {gene_coord_file_path} '
             f'--windowsize 100000 '
@@ -99,7 +99,7 @@ for celltype in vat_celltypes:
     vat_sqtl_sig_gene_path = f'/home/users/nus/e1124850/scratch/github/heritability_enrichment_ldsc/round5sqtl/tianchi_vat_{celltype}_gene_set_file.txt'
     for chrid in range(1, 23):
         cmd = (
-            f'python /home/users/nus/e1124850/ldsc/make_annot.py '
+            f'python /home/users/nus/e1124850/scratch/github/ldsc/make_annot.py '
             f'--gene-set-file {vat_sqtl_sig_gene_path} '
             f'--gene-coord-file {gene_coord_file_path} '
             f'--windowsize 100000 '
