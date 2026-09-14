@@ -54,11 +54,7 @@ baseline_prefix = (
     "1000G_Phase3_EAS_baselineLD_v2.2_ldscores/baselineLD."
 )
 
-frequency_prefix = (
-    "/home/users/nus/e1124850/e1124850/co_lab/tongyihan/"
-    "round1/1000G_Phase3_frq/1000G.EUR.QC."
-)
-
+frequency_prefix = "/home/users/nus/e1124850/e1124850/co_lab/tongyihan/round1/1000G_Phase3_EAS_plinkfiles/1000G.EAS.QC."
 weights_prefix = (
     "/home/users/nus/e1124850/e1124850/co_lab/tongyihan/"
     "round1/1000G_Phase3_EAS_weights_hm3_no_MHC/"
