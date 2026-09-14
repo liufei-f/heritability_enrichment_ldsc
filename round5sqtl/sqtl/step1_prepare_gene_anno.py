@@ -84,7 +84,7 @@ for celltype in sat_celltypes:
             f'--gene-coord-file {gene_coord_file_path} '
             f'--windowsize 100000 '
         f'--bimfile /home/users/nus/e1124850/e1124850/co_lab/tongyihan/round1/1000G_Phase3_EAS_plinkfiles/1000G.EAS.QC.{chrid}.bim '
-        f'--annot-file /home/users/nus/e1124850/e1124850/co_lab/tianchi/gene_annot_file/tianchi_sat_{celltype}_sqtlsig_gene_annot_file.{chrid}.annot.gz'
+        f'--annot-file /home/users/nus/e1124850/e1124850/co_lab/tianchi/gene_annot_file_grch37/tianchi_sat_{celltype}_sqtlsig_gene_annot_file.{chrid}.annot.gz'
     )
         os.system(cmd)
 
@@ -104,7 +104,7 @@ for celltype in vat_celltypes:
             f'--gene-coord-file {gene_coord_file_path} '
             f'--windowsize 100000 '
             f'--bimfile /home/users/nus/e1124850/e1124850/co_lab/tongyihan/round1/1000G_Phase3_EAS_plinkfiles/1000G.EAS.QC.{chrid}.bim '
-            f'--annot-file /home/users/nus/e1124850/e1124850/co_lab/tianchi/gene_annot_file/tianchi_vat_{celltype}_sqtlsig_gene_annot_file.{chrid}.annot.gz'
+            f'--annot-file /home/users/nus/e1124850/e1124850/co_lab/tianchi/gene_annot_file_grch37/tianchi_vat_{celltype}_sqtlsig_gene_annot_file.{chrid}.annot.gz'
         )
         os.system(cmd)
 
