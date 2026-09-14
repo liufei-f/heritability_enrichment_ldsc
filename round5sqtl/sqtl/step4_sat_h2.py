@@ -1,135 +1,73 @@
 import os
 import subprocess
-import sys
 
 traits = [
-    "Acute_Pancreatitis_ldsc",
-    "BMI_ldsc",
-    "Body_Weight_ldsc",
-    "Chronic_Pancreatitis_ldsc",
-    "Coronary_Artery_Disease_ldsc",
-    "Diabetic_Nephropathy_ldsc",
-    "Glucocorticoids_ldsc",
-    "Glucose_ldsc",
-    "HbA1c_ldsc",
-    "HDL_ldsc",
-    "Height_ldsc",
-    "LDL_ldsc",
-    "Pancreatic_Cancer_ldsc",
-    "Total_Cholesterol_ldsc",
-    "Triglycerides_ldsc",
-    "Waist_Circumference_ldsc",
-    "2hGlu_ldsc",
-    "Adiponectin_ldsc",
-    "Fasting_Glucose_ldsc",
-    "Fasting_Insulin_ldsc",
-    "T2DSakaue_ldsc",
-    "T2DSpracklen_ldsc",
+    "Acute_Pancreatitis_ldsc", "BMI_ldsc", "Body_Weight_ldsc", "Chronic_Pancreatitis_ldsc",
+    "Coronary_Artery_Disease_ldsc", "Diabetic_Nephropathy_ldsc", "Glucocorticoids_ldsc",
+    "Glucose_ldsc", "HbA1c_ldsc", "HDL_ldsc", "Height_ldsc", "LDL_ldsc",
+    "Pancreatic_Cancer_ldsc", "Total_Cholesterol_ldsc", "Triglycerides_ldsc",
+    "Waist_Circumference_ldsc", "2hGlu_ldsc", "Adiponectin_ldsc", "Fasting_Glucose_ldsc",
+    "Fasting_Insulin_ldsc", "T2DSakaue_ldsc", "T2DSpracklen_ldsc",
 ]
 
 sat_celltypes = [
-    "Adipocyte",
-    "Committed_preadipocyte",
-    "CEC",
-    "VEC",
-    "AEC",
-    "PVM",
-    "SMC",
-    "Early_preadipocyte",
-    "LAM",
-    "Areg",
-    "Pericyte",
+    "Adipocyte", "Committed_preadipocyte", "CEC", "VEC", "AEC", "PVM",
+    "SMC", "Early_preadipocyte", "LAM", "Areg", "Pericyte",
 ]
 
+python_executable = "/home/users/nus/e1124850/anaconda3/envs/ldsc39/bin/python"
 ldsc = "/home/users/nus/e1124850/scratch/github/ldsc/ldsc.py"
 sumstats_dir = "/home/users/nus/e1124850/scratch"
-
 annotation_dir = "/home/users/nus/e1124850/e1124850/co_lab/tianchi/gene_annot_file_grch37"
 baseline_prefix = "/home/users/nus/e1124850/e1124850/co_lab/tongyihan/1000G_Phase3_EAS_baselineLD_v2.2_ldscores/baselineLD."
 frequency_prefix = "/home/users/nus/e1124850/e1124850/co_lab/tongyihan/round1/1000G_Phase3_EAS_plinkfiles/1000G.EAS.QC."
 weights_prefix = "/home/users/nus/e1124850/e1124850/co_lab/tongyihan/round1/1000G_Phase3_EAS_weights_hm3_no_MHC/weights.EAS.hm3_noMHC."
-
 output_dir = "/home/users/nus/e1124850/scratch/sqtl_h2"
+
 os.makedirs(output_dir, exist_ok=True)
+
+run_env = os.environ.copy()
+run_env["PYTHONNOUSERSITE"] = "1"
+run_env.pop("PYTHONPATH", None)
 
 failed_runs = []
 
-# 防止加载 ~/.local 中与 ldsc39 环境不兼容的 Python 包
-run_env = os.environ.copy()
-run_env["PYTHONNOUSERSITE"] = "1"
-
 for trait in traits:
-    for celltype in sat_celltypes:
-        annotation_prefix = (
-            f"{annotation_dir}/"
-            f"tianchi_sat_{celltype}_sqtlsig_gene_annot_file."
-        )
+    sumstats_file = f"{sumstats_dir}/CELLECT_{trait}.sumstats.gz"
 
-        output_prefix = (
-            f"{output_dir}/tianchi_sat_{trait}_{celltype}"
-        )
+    for celltype in sat_celltypes:
+        annotation_prefix = f"{annotation_dir}/tianchi_sat_{celltype}_sqtlsig_gene_annot_file."
+        output_prefix = f"{output_dir}/tianchi_sat_{trait}_{celltype}"
 
         cmd = [
-            sys.executable,
-            ldsc,
-            "--h2",
-            f"{sumstats_dir}/CELLECT_{trait}.sumstats.gz",
-            "--ref-ld-chr",
-            f"{annotation_prefix},{baseline_prefix}",
+            python_executable, "-s", ldsc,
+            "--h2", sumstats_file,
+            "--ref-ld-chr", f"{annotation_prefix},{baseline_prefix}",
             "--overlap-annot",
-            "--frqfile-chr",
-            frequency_prefix,
-            "--w-ld-chr",
-            weights_prefix,
-            "--out",
-            output_prefix,
+            "--frqfile-chr", frequency_prefix,
+            "--w-ld-chr", weights_prefix,
+            "--out", output_prefix,
             "--print-coefficients",
         ]
 
-        print(f"\nRunning SAT: trait={trait}, celltype={celltype}")
+        print(f"\nRunning SAT: {trait} | {celltype}")
 
         try:
-            subprocess.run(
-                cmd,
-                check=True,
-                env=run_env,
-            )
+            subprocess.run(cmd, check=True, env=run_env)
             print(f"SUCCESS: {trait} | {celltype}")
-
         except subprocess.CalledProcessError as error:
-            print(
-                f"FAILED: {trait} | {celltype} "
-                f"| exit code={error.returncode}"
-            )
-            failed_runs.append(
-                (trait, celltype, error.returncode)
-            )
-            continue
-
+            print(f"FAILED: {trait} | {celltype} | exit code={error.returncode}")
+            failed_runs.append((trait, celltype, error.returncode))
         except Exception as error:
-            print(
-                f"UNEXPECTED ERROR: {trait} | {celltype} "
-                f"| {error}"
-            )
-            failed_runs.append(
-                (trait, celltype, str(error))
-            )
-            continue
+            print(f"UNEXPECTED ERROR: {trait} | {celltype} | {error}")
+            failed_runs.append((trait, celltype, str(error)))
 
-failure_file = os.path.join(
-    output_dir,
-    "tianchi_sat_failed_runs.tsv",
-)
+failure_file = f"{output_dir}/tianchi_sat_failed_runs.tsv"
 
 with open(failure_file, "w") as handle:
     handle.write("trait\tcelltype\terror\n")
-
     for trait, celltype, error in failed_runs:
         handle.write(f"{trait}\t{celltype}\t{error}\n")
 
-print("\nAll SAT jobs finished.")
-print(f"Failed jobs: {len(failed_runs)}")
+print(f"\nAll SAT jobs finished. Failed jobs: {len(failed_runs)}")
 print(f"Failure list: {failure_file}")
-
-for trait, celltype, error in failed_runs:
-    print(f"  {trait} | {celltype} | {error}")
